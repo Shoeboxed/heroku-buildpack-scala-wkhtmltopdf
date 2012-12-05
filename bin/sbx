@@ -12,7 +12,7 @@ install_wkhtmltopdf()
   fi
   tar xvjf $WKH_TAR_FILE
   rm $WKH_TAR_FILE
-  chmod +x wkhtmltopdf-0.9.9-static-amd64
+  chmod +x wkhtmltopdf-amd64
   echo "-----> done"
 }
 
