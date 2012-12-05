@@ -2,6 +2,7 @@
 
 install_wkhtmltopdf()
 {
+  cd $BUILD_DIR
   WKH_URL="http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-static-amd64.tar.bz2"
   WKH_TAR_FILE="wkhtmltopdf-0.9.9-static-amd64.tar.bz2"
   echo "-----> Installing wkhtmltopdf..."
@@ -13,7 +14,6 @@ install_wkhtmltopdf()
   tar xvjf $WKH_TAR_FILE
   rm $WKH_TAR_FILE
   chmod +x wkhtmltopdf-amd64
-  cd $BUILD_DIR
   mkdir -p vendor/wkhtmltopdf
   cp wkhtmltopdf-amd64 vendor/wkhtmltopdf
   echo "-----> done"
