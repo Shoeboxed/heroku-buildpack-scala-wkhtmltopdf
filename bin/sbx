@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+install_wkhtmltopdf()
+{
+  WKH_URL="http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-static-amd64.tar.bz2"
+  WKH_TAR_FILE="wkhtmltopdf-0.9.9-static-amd64.tar.bz2"
+  echo "-----> Installing wkhtmltopdf..."
+  curl --silent --max-time 150 --location $WKH_URL -o $WKH_TAR_FILE
+  if [ ! -f $WKH_TAR_FILE ]; then
+    echo "-----> Error downloading wkhtmltopdf! Please try again..."
+    exit 1
+  fi
+  tar xvjf $WKH_TAR_FILE
+  rm $WKH_TAR_FILE
+  chmod +x wkhtmltopdf-0.9.9-static-amd64
+  echo "-----> done"
+}
+
