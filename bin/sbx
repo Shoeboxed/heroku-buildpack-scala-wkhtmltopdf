@@ -12,7 +12,7 @@ install_wkhtmltopdf()
     exit 1
   fi
   mkdir -p vendor/wkhtmltopdf
-  tar -C vendor/wkhtmltopdf xvjf $WKH_TAR_FILE
+  tar xvjf $WKH_TAR_FILE -C vendor/wkhtmltopdf
   rm $WKH_TAR_FILE
   chmod +x vendor/wkhtmltopdf/wkhtmltopdf-amd64
   echo "-----> done. installed to: " + $(cd vendor/wkhtmltopdf; pwd)
