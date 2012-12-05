@@ -13,8 +13,8 @@ install_wkhtmltopdf()
   tar xvjf $WKH_TAR_FILE
   rm $WKH_TAR_FILE
   chmod +x wkhtmltopdf-amd64
-  mkdir -p vendor/wkhtmltopdf
-  cp wkhtmltopdf-amd64 vendor/wkhtmltopdf
+  mkdir -p $BUILD_DIR/vendor/wkhtmltopdf
+  cp wkhtmltopdf-amd64 $BUILD_DIR/vendor/wkhtmltopdf
   echo "-----> done"
 }
 
