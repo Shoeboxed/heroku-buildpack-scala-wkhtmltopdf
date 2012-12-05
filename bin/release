@@ -8,14 +8,17 @@ BUILD_DIR=$1
 cat <<EOF
 ---
 config_vars:
-  PATH: vendor/wkhtmltopdf:.jdk/bin:.sbt_home/bin:/usr/local/bin:/usr/bin:/bin
-  JAVA_OPTS: -server -Xmx384m -Xss512k -XX:+UseCompressedOops
+  PATH: .jdk/bin:.sbt_home/bin:/usr/local/bin:/usr/bin:/bin
+  JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
   SBT_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
   REPO: /app/.sbt_home/.ivy2/cache
 addons:
   heroku-postgresql:dev
 
 EOF
+
+echo "  PATH: $PATH:/app/vendor/wkhtmltopdf"
+echo "  JAVA_OPTS: -server $JAVA_OPTS"
 
 if is_play $BUILD_DIR && [ ! -f $BUILD_DIR/Procfile ] ; then
 cat <<EOF
