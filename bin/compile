@@ -10,8 +10,6 @@ OPT_DIR=$BP_DIR/opt
 . $BIN_DIR/common
 . $BIN_DIR/sbx
 
-install_wkhtmltopdf
-
 # parse args
 BUILD_DIR=$(cd $1; pwd)
 CACHE_DIR=$2
@@ -154,3 +152,5 @@ if is_play $BUILD_DIR && [ -d $SBT_USER_HOME/.ivy2 ] ; then
   rm -rf $SBT_USER_HOME/.ivy2 
 fi
 
+cd $BUILD_DIR
+install_wkhtmltopdf
