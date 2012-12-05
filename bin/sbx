@@ -11,11 +11,10 @@ install_wkhtmltopdf()
     echo "-----> Error downloading wkhtmltopdf! Please try again..."
     exit 1
   fi
-  tar xvjf $WKH_TAR_FILE
-  rm $WKH_TAR_FILE
-  chmod +x wkhtmltopdf-amd64
   mkdir -p vendor/wkhtmltopdf
-  cp wkhtmltopdf-amd64 vendor/wkhtmltopdf
-  echo "-----> done"
+  tar -C vendor/wkhtmltopdf xvjf $WKH_TAR_FILE
+  rm $WKH_TAR_FILE
+  chmod +x vendor/wkhtmltopdf/wkhtmltopdf-amd64
+  echo "-----> done. installed to: " + $(cd vendor/wkhtmltopdf; pwd)
 }
 
