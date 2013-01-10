@@ -18,3 +18,9 @@ install_wkhtmltopdf()
   echo "-----> done installing wkhtmltopdf."
 }
 
+stage_cron()
+{
+sed -e 's/play.core.server.NettyServer/models.Cron/g' target/start > target/cron
+chmod +x target/cron
+}
+
