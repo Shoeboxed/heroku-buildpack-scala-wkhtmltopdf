@@ -20,7 +20,7 @@ install_wkhtmltopdf()
 
 stage_cron()
 {
-sed -e 's/play.core.server.NettyServer/models.Cron/g' target/start > target/cron
+sed -e 's/play.core.server.NettyServer/com.shoeboxed.plugins.heroku.Runner/g' target/start > target/cron
 chmod +x target/cron
 }
 
