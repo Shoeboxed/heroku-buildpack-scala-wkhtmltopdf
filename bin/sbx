@@ -17,10 +17,3 @@ install_wkhtmltopdf()
   chmod +x vendor/wkhtmltopdf/wkhtmltopdf-amd64
   echo "-----> done installing wkhtmltopdf."
 }
-
-stage_cron()
-{
-sed -e 's/play.core.server.NettyServer/com.shoeboxed.plugins.heroku.Runner/g' target/start > target/cron
-chmod +x target/cron
-}
-

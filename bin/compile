@@ -154,4 +154,3 @@ fi
 cd $BUILD_DIR
 . $BIN_DIR/sbx
 install_wkhtmltopdf
-stage_cron
